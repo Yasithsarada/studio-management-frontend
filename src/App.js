@@ -73,7 +73,7 @@ function App() {
       </Route>
 
       <Route path="/eventManager" element={<EventManager/>}>
-        <Route path="/eventManager-Dashboard" element={<EventManagerDashboard/>}/>
+        <Route path="/eventManager" element={<EventManagerDashboard/>}/>
         <Route path="/eventManager/eventRequests" element={<EventRequests />}/>
         <Route   path="/eventManager/createEventRequest/:id" element={<CreateEventRequest />} />
         <Route path="/eventManager/eventCalandar" element={<EventManagerEventCalendar/>} />
