@@ -7,11 +7,14 @@
 //     ]
 //   }
 
+// postcss.config.js
 module.exports = {
     plugins: {
-      'tailwindcss/nesting': {},  // Add this line to support nested CSS
+      'postcss-import': {},
+      'tailwindcss/nesting': 'postcss-nesting',
       tailwindcss: {},
-      autoprefixer: {},
-    },
+      'postcss-preset-env': {
+        features: { 'nesting-rules': false },
+      },
+    }
   }
-  
