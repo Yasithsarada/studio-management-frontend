@@ -4,7 +4,7 @@ import Layout from './global/Layout';
 import { Button } from '@material-tailwind/react';
 import PaymentDetails from './pages/customerManager/paymentDetails';
 import CustomerManager from './pages/customerManager';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { customerList, superAdminList } from './global/Layout/data';
 import PaymentList from './pages/customerManager/PaymentsList';
 import CustomerRequests from './pages/customerManager/CustomerRequests';
@@ -55,10 +55,12 @@ import Events from './pages/eventManager/event';
 function App() {
   return (
 <>
+{/* <Redirect exact from="/" to="/eventManager/Events" /> */}
     <Routes>
-    <Route path="/" element={<div>login</div>}>
+    {/* <Route path="/" element={<div>login</div>}> */}
+    <Route path="/" element={<Navigate to="/superAdmin" replace={true} />}/>
         
-        </Route>
+        {/* </Route> */}
        <Route path="/customerManager" element={<CustomerManager />}>
         <Route  path="/customerManager" element={<CustomerManagerDashboard />} />
         <Route  path="/customerManager/customers" element={<Customers />} />
